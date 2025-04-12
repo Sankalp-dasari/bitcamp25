@@ -60,7 +60,7 @@ const SectionTitle = ({ children, color = "text-white" }) => (
   </motion.h2>
 );
 
-// Team member card component with interactive elements
+// TeamMemberCard component for Home.js with local image support
 const TeamMemberCard = ({ member, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   
@@ -70,6 +70,9 @@ const TeamMemberCard = ({ member, index }) => {
     "from-amber-500 to-red-500",
     "from-green-500 to-emerald-400"
   ];
+  
+  // Default emojis as fallback
+  const fallbackEmojis = ["👩‍🔬", "👨‍💻", "🧪", "👩‍💼"];
   
   return (
     <motion.div 
@@ -84,14 +87,35 @@ const TeamMemberCard = ({ member, index }) => {
       <div className={`bg-gradient-to-br ${colorPalettes[index % colorPalettes.length]} p-1 rounded-xl shadow-lg`}>
         <div className="bg-gray-900 p-6 rounded-lg h-full flex flex-col items-center">
           <motion.div 
-            className="w-32 h-32 mb-6 relative"
+            className="w-32 h-32 mb-6 relative rounded-full overflow-hidden"
             animate={isHovered ? { scale: 1.1, rotate: 5 } : { scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${colorPalettes[index % colorPalettes.length]} rounded-full opacity-80`}></div>
-            <div className="absolute inset-2 bg-gray-800 rounded-full flex items-center justify-center">
-              <span className="text-4xl">{index === 0 ? "👩‍🔬" : index === 1 ? "👨‍💻" : index === 2 ? "🧪" : "👩‍💼"}</span>
-            </div>
+            
+            {member.imageUrl ? (
+              <img 
+                src={member.imageUrl} 
+                alt={member.name}
+                className="absolute inset-0 w-full h-full object-cover rounded-full border-2 border-gray-800"
+                onError={(e) => {
+                  // If image fails to load, show the emoji fallback
+                  e.target.style.display = 'none';
+                  const parent = e.target.parentNode;
+                  const fallbackDiv = document.createElement('div');
+                  fallbackDiv.className = 'absolute inset-2 bg-gray-800 rounded-full flex items-center justify-center';
+                  const emojiSpan = document.createElement('span');
+                  emojiSpan.className = 'text-4xl';
+                  emojiSpan.textContent = fallbackEmojis[index % fallbackEmojis.length];
+                  fallbackDiv.appendChild(emojiSpan);
+                  parent.appendChild(fallbackDiv);
+                }}
+              />
+            ) : (
+              <div className="absolute inset-2 bg-gray-800 rounded-full flex items-center justify-center">
+                <span className="text-4xl">{fallbackEmojis[index % fallbackEmojis.length]}</span>
+              </div>
+            )}
           </motion.div>
           
           <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
