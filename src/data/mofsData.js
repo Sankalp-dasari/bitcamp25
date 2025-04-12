@@ -2,26 +2,26 @@
 export const teamMembers = [
     {
       id: 1,
-      name: 'Dr. Jane Smith',
-      role: 'Lead Researcher',
+      name: 'Aditya Sunke',
+      role: 'CS major',
       bio: 'Specializes in computational chemistry and MOF design with over 10 years of experience in materials science and catalysis.'
     },
     {
       id: 2,
-      name: 'Prof. John Davis',
-      role: 'AI Specialist',
+      name: 'Aarya Anup',
+      role: 'CS major',
       bio: 'Expert in machine learning applications for materials science and molecular modeling with publications in Nature and Science.'
     },
     {
       id: 3,
-      name: 'Dr. Alex Wong',
-      role: 'Materials Scientist',
+      name: 'Sophia Chukka',
+      role: 'CMDA major',
       bio: 'Focuses on experimental validation and synthesis of novel MOF structures with particular expertise in high-throughput screening methods.'
     },
     {
       id: 4,
-      name: 'Dr. Sarah Johnson',
-      role: 'Project Coordinator',
+      name: 'Sankalp Dasari',
+      role: 'CS major',
       bio: 'Manages project workflow and coordinates between computational and experimental teams with background in both chemistry and environmental science.'
     }
   ];
