@@ -288,7 +288,7 @@ const Home = () => {
               }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              BitComp 25
+              CarbonQapture
             </motion.h1>
             
             <motion.div 
@@ -303,7 +303,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              Creating innovative Metal-Organic Frameworks for carbon capture and enhanced energy systems through computational design and AI
+              Simulating metal organic frameworks to capture carbon dioxide using a variational quantum eigensolver
             </motion.p>
 
             <motion.div

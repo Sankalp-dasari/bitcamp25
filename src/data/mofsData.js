@@ -4,25 +4,29 @@ export const teamMembers = [
       id: 1,
       name: 'Aditya Sunke',
       role: 'CS major',
-      bio: 'Specializes in computational chemistry and MOF design with over 10 years of experience in materials science and catalysis.'
+      bio: 'Specializes in computational chemistry and MOF design with over 10 years of experience in materials science and catalysis.',
+      imageUrl: "https://media.licdn.com/dms/image/v2/D5603AQEciFzeVJNPNA/profile-displayphoto-shrink_800_800/B56ZTPrr9NHQAc-/0/1738651124201?e=1749686400&v=beta&t=pcgLJnkpa9XwNfkXcoMW94ZTw-n-gforPk2Yn5LWrIY"
     },
     {
       id: 2,
       name: 'Aarya Anup',
       role: 'CS major',
-      bio: 'Expert in machine learning applications for materials science and molecular modeling with publications in Nature and Science.'
+      bio: 'Expert in machine learning applications for materials science and molecular modeling with publications in Nature and Science.',
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQEVEU9FOU4q8g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712284337794?e=1749686400&v=beta&t=LdimbM10GBP5n-l71f60jhT55XD_lN_7V-uCpArQNFw"
     },
     {
       id: 3,
       name: 'Sophia Chukka',
       role: 'CMDA major',
-      bio: 'Focuses on experimental validation and synthesis of novel MOF structures with particular expertise in high-throughput screening methods.'
+      bio: 'Focuses on experimental validation and synthesis of novel MOF structures with particular expertise in high-throughput screening methods.',
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQGlkfvPIciH2Q/profile-displayphoto-shrink_800_800/B4EZYREO_9HgAk-/0/1744043045417?e=1749686400&v=beta&t=Kt0_wH2Rr-8vAtN4_fiUE9eKz7BqAme-gUYHLuHOqcc"
     },
     {
       id: 4,
       name: 'Sankalp Dasari',
       role: 'CS major',
-      bio: 'Manages project workflow and coordinates between computational and experimental teams with background in both chemistry and environmental science.'
+      bio: 'Manages project workflow and coordinates between computational and experimental teams with background in both chemistry and environmental science.',
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFfi9qvu9dcug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699043281268?e=1749686400&v=beta&t=EC8sF7K_SNW2ulcdiN5k7ncsESUfCI_EB8kTKJb07Y8"
     }
   ];
   
