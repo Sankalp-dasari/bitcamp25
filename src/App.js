@@ -20,7 +20,7 @@ function App() {
         </main>
         <footer className="bg-white shadow-inner py-6">
           <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
-            <p>© 2025 BitComp 25. All rights reserved.</p>
+            <p>© 2025 CarbonQapture. All rights reserved.</p>
           </div>
         </footer>
       </div>
