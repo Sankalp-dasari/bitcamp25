@@ -6,7 +6,7 @@ import './index.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900">
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -18,8 +18,8 @@ function App() {
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </main>
-        <footer className="bg-white shadow-inner py-6">
-          <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
+        <footer className="bg-gray-900 text-white py-6">
+          <div className="max-w-7xl mx-auto px-4 text-center text-gray-400">
             <p>© 2025 CarbonQapture. All rights reserved.</p>
           </div>
         </footer>
@@ -29,4 +29,3 @@ function App() {
 }
 
 export default App;
-
