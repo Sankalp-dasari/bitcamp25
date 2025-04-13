@@ -4,14 +4,14 @@ export const teamMembers = [
       id: 1,
       name: 'Aditya Sunke',
       role: 'CS major',
-      bio: 'Specializes in computational chemistry and MOF design with over 10 years of experience in materials science and catalysis.',
+      bio: 'Minor in Quantum Information Science and Engineering. Experience in Java, Python, C, Qiskit and Pennylane. Experience with Post-Quantum Cryptographic Protocols.',
       imageUrl: "https://media.licdn.com/dms/image/v2/D5603AQEciFzeVJNPNA/profile-displayphoto-shrink_800_800/B56ZTPrr9NHQAc-/0/1738651124201?e=1749686400&v=beta&t=pcgLJnkpa9XwNfkXcoMW94ZTw-n-gforPk2Yn5LWrIY"
     },
     {
       id: 2,
       name: 'Aarya Anup',
       role: 'CS major',
-      bio: 'Expert in machine learning applications for materials science and molecular modeling with publications in Nature and Science.',
+      bio: 'Minor in Quantum Information Science and Engineering. Experience in Qiskit, Pennylane, Python, Java, C and C++. Working on research with Professor on Quantum Computing with Neutral Atoms.',
       imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQEVEU9FOU4q8g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712284337794?e=1749686400&v=beta&t=LdimbM10GBP5n-l71f60jhT55XD_lN_7V-uCpArQNFw"
     },
     {
@@ -25,7 +25,7 @@ export const teamMembers = [
       id: 4,
       name: 'Sankalp Dasari',
       role: 'CS major',
-      bio: 'Manages project workflow and coordinates between computational and experimental teams with background in both chemistry and environmental science.',
+      bio: 'Minor in Cybersecurity, Experience in Java, Python, C, AI, ML, Full Stack Development,cryptography. Working on research related to computer vision andreal time tracking. ',
       imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFfi9qvu9dcug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699043281268?e=1749686400&v=beta&t=EC8sF7K_SNW2ulcdiN5k7ncsESUfCI_EB8kTKJb07Y8"
     }
   ];
@@ -52,23 +52,29 @@ export const teamMembers = [
   export const implementationSteps = [
     {
       id: 1,
-      title: 'Design',
-      description: 'Computational design of MOF structures using machine learning and molecular modeling. We trained AI on existing MOF data to predict optimal configurations.'
+      title: 'Gather Database',
+      description: 'Gather Database from Materials Cloud, an open source software with 324K total MOFs and nearly 8K MOFs screened for Carbon Capture'
     },
     {
       id: 2,
-      title: 'Simulate',
-      description: 'Simulate MOF properties including carbon capture capacity and ground state energy using density functional theory and Grand Canonical Monte Carlo methods.'
+      title: 'Implement the Variational Quantum Eigensolver',
+      description: '2. Run each MOF through the VQE to determine the ground state energy value from the database'
+
     },
     {
       id: 3,
-      title: 'Optimize',
-      description: 'Optimize MOF structures based on simulation results and target properties. Our AI system performs iterative optimization to improve performance metrics.'
+      title: 'Writing a Neural Network',
+      description: 'Evaluate the existing MOFs’ ground state energy and train a neural network to generate a new set of MOFs'
     },
     {
       id: 4,
-      title: 'Validate',
-      description: 'Experimentally validate optimized MOF structures in laboratory conditions. We synthesize and test top candidates for real-world performance verification.'
+      title: 'Creating CIF Files',
+      description: '4. Use the predicted properties of the new MOFs to create CIF files for simulation with the VQE algorithm'
+    },
+    {
+      id: 5,
+      title: 'Run VQE on new MOFs',
+      description: ' Compare the ground state energies and CO2 uptake with existing MOFs and verify structure of new MOFs using VESTA'
     }
   ];
   
