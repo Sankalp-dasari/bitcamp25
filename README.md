@@ -52,3 +52,15 @@ This project integrates **quantum simulation** and **machine learning** to:
 ## Frontend Development
 - **[React](https://reactjs.org/docs/getting-started.html)**: JavaScript library for building user interfaces.
 - **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**: Programming language that enables interactive web pages.
+
+
+# Citations / Resources Page
+
+## Research Papers
+- Anaya, Alan, and Francisco Delgado. "Simulating Molecules Using the VQE Algorithm on Qiskit." ArXiv, 8 Jan. 2022, arxiv.org/pdf/2201.04216.
+- Ramesh Dahale, Gopal. "Quantum Simulations for Carbon Capture on Metal-Organic Frameworks." ArXiv, 21 Nov. 2023, arxiv.org/pdf/2311.12411.
+
+## Learning Resources
+- Gran, Alain Delgado. "A Brief Overview of VQE." PennyLane Demos, Xanadu, 8 Feb. 2020, pennylane.ai/qml/demos/tutorial_vqe.
+- "Textbook/Notebooks/Ch-Applications/Vqe-Molecules.ipynb at Main · Qiskit/Textbook." GitHub, github.com/Qiskit/textbook/blob/main/notebooks/ch-applications/vqe-molecules.ipynb.
+- "Variational Quantum Eigensolver." Catalyst, 2023, docs.pennylane.ai/projects/catalyst/en/latest/demos/adaptive_circuits_demo.html.
