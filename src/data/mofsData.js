@@ -63,7 +63,7 @@ export const teamMembers = [
     },
     {
       id: 3,
-      title: 'training The Neural Network',
+      title: 'Neural Network',
       description: 'Evaluate the existing MOFs’ ground state energy and train a neural network to generate a new set of MOFs'
     },
     {
