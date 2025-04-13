@@ -380,13 +380,13 @@ const Home = () => {
             >
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-indigo-500/20 h-full">
                 <p className="text-white/90 mb-6 text-lg">
-                  Our project aims to develop innovative Metal-Organic Frameworks (MOFs) for efficient carbon capture and improved energy systems. Through computational design and AI optimization, we're creating structures that outperform conventional materials.
+                Our primary objective is to harness the power of quantum computing by employing the Variational Quantum Eigensolver (VQE) to explore and simulate the behavior of various metal-organic frameworks (MOFs) in the context of CO₂ capture.
                 </p>
                 <p className="text-white/90 mb-6 text-lg">
-                  We combine advanced modeling techniques with experimental validation to produce MOFs with enhanced properties for environmental applications.
+                By utilizing a curated database of existing MOF structures, our approach involves running high-fidelity quantum simulations to understand and quantify each material’s capacity for CO₂ sequestration. The simulation data will not only provide key insights into the mechanisms of gas adsorption at the molecular level, but will also serve as a robust foundation for training a dedicated artificial intelligence model.
                 </p>
                 <p className="text-white/90 text-lg">
-                  The objective is to address climate challenges through materials science innovation, creating sustainable solutions for carbon reduction and energy efficiency.
+                This AI model is designed to analyze simulation outcomes, learn complex patterns in material properties, and ultimately, propose new and innovative MOF structures optimized for enhanced CO₂ capture. This integrated workflow stands at the intersection of quantum chemistry, advanced computation, and machine learning, aiming to accelerate the discovery of next-generation materials with environmental significance.
                 </p>
               </div>
             </motion.div>
@@ -501,14 +501,18 @@ const Home = () => {
               whileHover={{ rotate: 5, scale: 1.05 }}
             >
               <div className="relative w-full aspect-square">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 rounded-2xl transform rotate-3"></div>
-                <div className="absolute inset-2 bg-gray-900 rounded-2xl flex items-center justify-center p-4">
-                  <div className="text-center">
-                    <span className="text-6xl block mb-4">🌎</span>
-                    <span className="text-xl font-medium text-cyan-300">Sustainable Future</span>
-                  </div>
-                </div>
-              </div>
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 rounded-sm transform rotate-3"></div>
+  <div className="absolute inset-2 bg-gray-900 rounded-sm flex items-center justify-center p-4">
+    <div className="text-center">
+      <img 
+        src="https://marketplace.canva.com/EAGgk9aelTw/1/0/1280w/canva-green-blue-organic-illustrative-sustainability-climate-change-animated-instagram-post-_PJijoqP0Uk.jpg" 
+        alt="Sustainable Future" 
+        className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+      />
+      <span className="text-xl font-medium text-cyan-300">Sustainable Future</span>
+    </div>
+  </div>
+</div>
             </motion.div>
             
             <motion.div 
@@ -520,13 +524,13 @@ const Home = () => {
             >
               <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-blue-500/20">
                 <p className="text-white/90 mb-6 text-lg">
-                  Our vision is to revolutionize environmental sustainability through advanced materials science. We aim to create MOF technologies that can be implemented globally to reduce carbon emissions and enhance energy efficiency.
+                Our long-term vision is to revolutionize the way innovative materials are discovered and optimized to meet critical environmental challenges. By integrating cutting-edge quantum algorithms with artificial intelligence, we aspire to create a dynamic research platform that continuously evolves and adapts, fostering unprecedented breakthroughs in the field of carbon capture.
                 </p>
                 <p className="text-white/90 mb-6 text-lg">
-                  By combining computational design with experimental validation, we're building a pathway to scale these solutions for industrial applications and climate impact.
+                We envision a future where our approach not only contributes to a deeper understanding of MOF chemistry and CO₂ sequestration but also spearheads the development of sustainable, high-performance materials.
                 </p>
                 <p className="text-white/90 text-lg">
-                  The long-term goal is to establish a framework for continuous innovation in materials science that addresses evolving environmental challenges and contributes to a more sustainable future.
+                This initiative aspires to bridge the gap between theoretical simulation and practical application, ultimately contributing to global efforts against climate change. In this vision, the synergy between quantum computing and AI will pave the way for scalable, efficient material design strategies that empower industries and governments worldwide to achieve cleaner, greener technologies.
                 </p>
               </div>
             </motion.div>
