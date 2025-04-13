@@ -309,7 +309,7 @@ const Home = () => {
         transition={{ duration: 0.6 }}
       >
         <img 
-          src="/logo.png" 
+          src="/images/logo.png" 
           alt="CarbonQapture Logo" 
           className="h-40 md:h-48 mx-auto"
           onError={(e) => {
