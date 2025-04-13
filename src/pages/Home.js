@@ -291,16 +291,36 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Title */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-purple-900/70 to-pink-900/70 z-0" />
-        
-        <div className="max-w-4xl mx-auto px-4 z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+{/* Hero Section with Logo and Title */}
+<section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+  <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-purple-900/70 to-pink-900/70 z-0" />
+  
+  <div className="max-w-4xl mx-auto px-4 z-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Logo added here */}
+      <motion.div
+        className="mb-8"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <img 
+          src="/logo.png" 
+          alt="CarbonQapture Logo" 
+          className="h-40 md:h-48 mx-auto"
+          onError={(e) => {
+            console.error("Logo failed to load");
+            e.target.alt = "CarbonQapture";
+            // Hide the image if it fails to load
+            e.target.style.display = 'none';
+          }}
+        />
+      </motion.div>
+      
             <motion.h1 
               className="text-6xl md:text-8xl font-bold mb-6"
               animate={{ 
