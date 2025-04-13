@@ -17,7 +17,7 @@ export const teamMembers = [
     {
       id: 3,
       name: 'Sophia Chukka',
-      role: 'CMDA (cyber and cryto) major',
+      role: 'CMDA major',
       bio: 'Minor in CS and Math, Experience in Programming Languages: Python, Java, SQL, R, C, Matlab, React; Libraries: Pandas, NumPy, Matplotlib, Tableau, Power BI.  Working on Linear Algebra and Coding Theory Research at VT Math Department.',
       imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQGlkfvPIciH2Q/profile-displayphoto-shrink_800_800/B4EZYREO_9HgAk-/0/1744043045417?e=1749686400&v=beta&t=Kt0_wH2Rr-8vAtN4_fiUE9eKz7BqAme-gUYHLuHOqcc"
     },
