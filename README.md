@@ -1,72 +1,54 @@
-# bitcamp25
+# **[CarbonQapture - Bitcamp 2025](https://bitcamp25.vercel.app/)**
+Implementing a **Variational Quantum Eigensolver (VQE)** to simulate the interactions between **Metal-Organic Frameworks (MOFs)** and Carbon Dioxide molecules to simulate **Carbon Capture**.
 
-# Getting Started with Create React App
+Harnessing quantum computing to accelerate the discovery of next-generation metal-organic frameworks (MOFs) for efficient carbon dioxide capture.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Inspiration
 
-In the project directory, you can run:
+**Quantum Computing** promises a new era of computing that uses the **quantum nature** of a particle to **perform computations exponentially faster**. With **climate change** and greenhouse gases like **Carbon Dioxide** at the forefront of global concerns, **carbon capture** has emerged as a critical area of research. Metal-organic frameworks (MOFs) are **highly porous materials** capable of selectively **adsorbing CO₂**, making them prime candidates for sustainable solutions. However, the vast design space of MOFs makes discovery a challenge — this is where quantum concepts like the  **Variational Quantum Eigensolver (VQE)** comes in.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What It Does
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project integrates **quantum simulation** and **machine learning** to:
 
-### `npm test`
+- Simulate MOFs using the **Variational Quantum Eigensolver (VQE)** algorithm.
+- Estimate **ground-state energies** to assess CO₂ capture efficiency.
+- Train an **AI model** to predict and **propose novel MOF structures** optimized for carbon capture.
+- **Test out the proposed MOF structures** on the VQE algorithm to **analyze ground state energy**.
+- Output predictions, highlighting performance metrics like **uptake, selectivity, and heat of adsorption**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## How It Works
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **CIF Parsing**: Structural data from a real [MOF Dataset](https://www.materialscloud.org/discover/mofs#mcloudHeader) (in `.cif` format) is parsed.
+2. **Hamiltonian Construction**: A simplified 2-qubit molecular Hamiltonian is built for each structure.
+3. **Quantum Simulation**: Using PennyLane, VQE estimates the ground state energy of each MOF-CO₂ system.
+4. **AI Model**: A neural network is trained on simulation outputs and pre-existing MOF dataset to propose new MOF structures.
+5. **Results**: Energies and material properties are saved in `.csv` format and visualized via plots.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Technologies Used
 
-### `npm run eject`
+## Python Libraries
+- **[NumPy](https://numpy.org/doc/)**: Fundamental package for numerical computations in Python.
+- **[Pandas](https://pandas.pydata.org/docs/)**: Data structures and data analysis tools.
+- **[PyTorch](https://pytorch.org/docs/)**: Deep learning framework for building and training neural networks.
+- **[scikit-learn](https://scikit-learn.org/stable/documentation.html)**: Machine learning library offering tools for data preprocessing, classification, regression, and more.
+- **[Matplotlib](https://matplotlib.org/stable/contents.html)**: Comprehensive library for creating static, animated, and interactive visualizations.
+- **[os](https://docs.python.org/3/library/os.html)**: Module providing a way of using operating system-dependent functionality.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Quantum Computing
+- **[PennyLane](https://docs.pennylane.ai/)**: Cross-platform Python library for quantum computing and machine learning, enabling hybrid quantum-classical computations.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## CUDA
+- **[CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)**: NVIDIA's parallel computing platform and programming model for GPU acceleration.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Frontend Development
+- **[React](https://reactjs.org/docs/getting-started.html)**: JavaScript library for building user interfaces.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**: Programming language that enables interactive web pages.
