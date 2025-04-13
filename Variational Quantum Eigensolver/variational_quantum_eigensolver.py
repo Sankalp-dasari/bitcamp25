@@ -65,26 +65,59 @@ def run_vqe(H, num_qubits=2, max_iterations=100):
     # Choose optimizer
     optimizer = pl.GradientDescentOptimizer(stepsize=0.1)
 
+    # Track energy vs iteration
+    energy_history = []
+
     # Optimization loop
     for i in range(max_iterations):
         params, energy = optimizer.step_and_cost(cost_fn, params)
+        # Save iteration and energy as a tuple
+        energy_history.append((i, float(energy)))
+        
         if i % 10 == 0:
             print(f"Iteration {i}: Energy = {energy}")  # Log progress
 
-    return energy, params
+    final_energy = energy_history[-1][1]
+    return final_energy, params, energy_history
+
+"""
+This function saves the energy vs iteration data for all MOFs to a CSV file
+"""
+def save_energy_iterations_to_csv(energy_data_dict, output_file="energy_vs_iterations_tuple.csv"):
+    # Create a list to hold all data rows
+    all_data = []
+    
+    # For each MOF, add its energy history to the data
+    for mof_name, energy_history in energy_data_dict.items():
+        for iteration, energy in energy_history:
+            all_data.append({
+                "MOF": mof_name,
+                "(x,y)": (iteration,energy)
+            })
+    
+    # Create DataFrame and save to CSV
+    df = pd.DataFrame(all_data)
+    df.to_csv(output_file, index=False)
+    print(f"Energy vs iteration data saved to '{output_file}'")
 
 """
 This is the main function of the program. This executes 
-the program. It builds the Hamiltonians for each MOF
-and run the VQE algorithm for each MOF to calculate the 
-ground state energy. Then, the results are stored in a 
-CSV file.
+the program.
 """
 def main():
+    """
+    Main function that:
+        - Reads all CIF files from a directory.
+        - Builds Hamiltonians for each MOF.
+        - Runs VQE for each MOF to get ground state energy.
+        - Stores results in a CSV file.
+        - Tracks and saves energy vs iteration data for plotting.
+    """
     # Directory where CIF files are located
-    cif_directory = "MOF_Database"
+    cif_directory = "generated mofs"
     
     results = []  # Will store MOF name and energy
+    energy_data = {}  # Will store energy vs iteration data for each MOF
 
     # Iterate through all files in the directory
     for file in os.listdir(cif_directory):
@@ -95,19 +128,26 @@ def main():
             # Simulate building the Hamiltonian
             H = get_hamiltonian_from_cif(cif_path)
             
-            # Run VQE to get the lowest energy
-            energy, params = run_vqe(H)
+            # Run VQE to get the lowest energy and energy history
+            energy, params, energy_history = run_vqe(H)
+            
+            # Store energy history for this MOF
+            mof_name = file.replace(".cif", "")
+            energy_data[mof_name] = energy_history
             
             print(f"Finished {file} with minimum energy: {energy:.4f}\n")
             
             # Store result for this MOF
             results.append({"MOF": file, "Ground_State_Energy": energy})
     
-    # Save all energies to a CSV file using pandas
+    # Save all final energies to a CSV file
     df = pd.DataFrame(results)
     df.to_csv("ground_state_energies.csv", index=False)
     print("All results saved to 'ground_state_energies.csv'.")
+    
+    # Save energy vs iteration data for all MOFs
+    save_energy_iterations_to_csv(energy_data)
 
-# Run the script
+# Run the script if it's executed directly (not imported)
 if __name__ == "__main__":
     main()
