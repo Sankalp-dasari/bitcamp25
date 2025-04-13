@@ -17,7 +17,7 @@ export const teamMembers = [
     {
       id: 3,
       name: 'Sophia Chukka',
-      role: 'CMDA (cybersecurity and crytography) major',
+      role: 'CMDA (cyber and cryto) major',
       bio: 'Minor in CS and Math, Experience in Programming Languages: Python, Java, SQL, R, C, Matlab, React; Libraries: Pandas, NumPy, Matplotlib, Tableau, Power BI.  Working on Linear Algebra and Coding Theory Research at VT Math Department.',
       imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQGlkfvPIciH2Q/profile-displayphoto-shrink_800_800/B4EZYREO_9HgAk-/0/1744043045417?e=1749686400&v=beta&t=Kt0_wH2Rr-8vAtN4_fiUE9eKz7BqAme-gUYHLuHOqcc"
     },
@@ -26,7 +26,7 @@ export const teamMembers = [
       name: 'Sankalp Dasari',
       role: 'CS major',
       bio: 'Minor in Cybersecurity, Experience in Java, Python, C, AI, ML, Full Stack Development,cryptography. Working on research related to computer vision andreal time tracking. ',
-      imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFfi9qvu9dcug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699043281268?e=1749686400&v=beta&t=EC8sF7K_SNW2ulcdiN5k7ncsESUfCI_EB8kTKJb07Y8"
+      imageUrl: "https://media.licdn.com/dms/image/v2/D5603AQEJpGQcseWd9w/profile-displayphoto-shrink_800_800/B56ZYt4.CZGsAk-/0/1744526632779?e=1750291200&v=beta&t=1JmncC1sKAhvx7l6bgKP9xyQH8gmWLIyhpB0rBL6VyE"
     }
   ];
   

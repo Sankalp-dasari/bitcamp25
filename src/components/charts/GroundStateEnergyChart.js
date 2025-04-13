@@ -560,7 +560,7 @@ str_m2_o1_o1_pcu_sym.13,"(99, -0.3584221221064641)"`;
             stroke="rgba(255,255,255,0.7)" 
             tick={false}
             label={{ 
-              value: 'Energy Value', 
+              value: 'Energy Value (EV)', 
               angle: -90, 
               position: 'insideLeft', 
               dy: 50,

@@ -437,7 +437,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <SectionTitle>Implementation</SectionTitle>
           <p className="text-center text-white/80 mb-12 max-w-2xl mx-auto">
-            Click on each step to learn more about our implementation process
+            
           </p>
           
           <ImplementationFlow />
