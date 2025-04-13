@@ -15,7 +15,7 @@ function App() {
             {/* <Route path="/results" element={<Results />} /> */}
             {/* <Route path="/vision" element={<Vision />} /> */}
             {/* <Route path="/research" element={<Research />} /> */}
-            { <Route path="/contact" element={<Contact />} /> }
+            { <Route path="/contact" element={<ContactPage />} /> }
           </Routes>
         </main>
         <footer className="bg-gray-900 text-white py-6">
