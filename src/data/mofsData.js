@@ -57,24 +57,24 @@ export const teamMembers = [
     },
     {
       id: 2,
-      title: 'Implement the Variational Quantum Eigensolver',
-      description: '2. Run each MOF through the VQE to determine the ground state energy value from the database'
+      title: 'Implement the VQE',
+      description: 'Run each MOF through the VQE to determine the ground state energy value from the database'
 
     },
     {
       id: 3,
-      title: 'Writing a Neural Network',
+      title: 'training The Neural Network',
       description: 'Evaluate the existing MOFs’ ground state energy and train a neural network to generate a new set of MOFs'
     },
     {
       id: 4,
       title: 'Creating CIF Files',
-      description: '4. Use the predicted properties of the new MOFs to create CIF files for simulation with the VQE algorithm'
+      description: 'Use the predicted properties of the new MOFs to create CIF files for simulation with the VQE algorithm'
     },
     {
       id: 5,
       title: 'Run VQE on new MOFs',
-      description: ' Compare the ground state energies and CO2 uptake with existing MOFs and verify structure of new MOFs using VESTA'
+      description: 'Compare the ground state energies and CO2 uptake with existing MOFs and verify structure of new MOFs using VESTA'
     }
   ];
   
