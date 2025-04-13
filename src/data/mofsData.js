@@ -78,34 +78,7 @@ export const teamMembers = [
     }
   ];
   
-  // MOF Structure Components with detailed descriptions
-  export const mofStructureComponents = [
-    { 
-      id: 1, 
-      name: 'Metal clusters', 
-      description: 'Metal ions or clusters that serve as nodes in the MOF structure. Our AI optimizes the selection of metals (Zn, Cu, Zr, Al) based on binding energy and selectivity.' 
-    },
-    { 
-      id: 2, 
-      name: 'Organic linkers', 
-      description: 'Organic molecules that connect metal clusters. We have developed novel linkers with functional groups specifically designed to enhance CO₂ adsorption capacity.' 
-    },
-    { 
-      id: 3, 
-      name: '3D frameworks', 
-      description: 'Three-dimensional arrangements of nodes and linkers. Our AI algorithms predict optimal geometries that maximize surface area while maintaining structural stability.' 
-    },
-    { 
-      id: 4, 
-      name: 'Porous cavities', 
-      description: 'Empty spaces within the MOF structure for gas adsorption. We have optimized pore size distributions to specifically target CO₂ molecules while rejecting competing gases.' 
-    },
-    { 
-      id: 5, 
-      name: 'High surface area', 
-      description: 'Large internal surface area for interactions with guest molecules. Our MOFs achieve surface areas exceeding 4000 m²/g, significantly higher than conventional materials.' 
-    },
-  ];
+  
   
   // Vision Elements
   export const visionElements = [

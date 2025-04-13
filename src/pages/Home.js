@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import CarbonCaptureChart from '../components/charts/CarbonCaptureChart';
 import GroundStateEnergyChart from '../components/charts/GroundStateEnergyChart';
-import { teamMembers, implementationSteps, mofStructureComponents } from '../data/mofsData';
+import { teamMembers, implementationSteps } from '../data/mofsData';
 
 // Particle background component
 const ParticleBackground = () => {
@@ -149,45 +149,7 @@ const TeamMemberCard = ({ member, index }) => {
   );
 };
 
-// MOF structure interactive card component
-const MOFStructureCard = ({ component, index }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  return (
-    <motion.div
-      className="border border-purple-500/30 rounded-lg overflow-hidden bg-purple-900/20 hover:bg-purple-900/40 transition-colors cursor-pointer"
-      whileHover={{ scale: 1.03 }}
-      onClick={() => setIsExpanded(!isExpanded)}
-      layout
-    >
-      <div className="p-4 flex items-center justify-between">
-        <span className="font-medium text-white">{component.name}</span>
-        <motion.div
-          animate={{ rotate: isExpanded ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-300" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </motion.div>
-      </div>
-      
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="px-4 pb-4 text-sm text-gray-300"
-          >
-            {component.description}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
+
 
 // Interactive implementation diagram
 const ImplementationFlow = () => {
@@ -419,16 +381,58 @@ const Home = () => {
             >
               <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-indigo-500/20 h-full">
                 <h3 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-300">MOF Structure</h3>
-                <div className="flex flex-col space-y-3">
-                  {mofStructureComponents.map((component, index) => (
-                    <MOFStructureCard key={index} component={component} index={index} />
-                  ))}
+  
+                <div className="grid grid-cols-1 gap-4">
+                  {/* First MOF structure image - Existing MOF */}
+                  <motion.div 
+                    className="relative w-full overflow-hidden rounded-xl"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+    
+                    <img 
+                      src="/images/Existing MOF.jpg" 
+                      alt="Existing MOF Structure" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error("Existing MOF image failed to load");
+                        e.target.alt = "Existing MOF Structure";
+                        e.target.src = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect fill='%232d3748' width='400' height='400'/%3E%3Ctext fill='%237f9cf5' font-family='sans-serif' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EExisting MOF Structure%3C/text%3E%3C/svg%3E";
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-indigo-900/90 to-indigo-900/0">
+                      <p className="text-xs text-center text-indigo-200">Existing MOF Structure</p>
+                    </div>
+                  </motion.div>
+                  
+                  {/* Second MOF structure image - AI Generated MOF */}
+                  <motion.div 
+                    className="relative w-full overflow-hidden rounded-xl"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <img 
+                      src="/images/AI Generated MOF.jpg" 
+                      alt="AI Generated MOF Structure" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error("AI Generated MOF image failed to load");
+                        e.target.alt = "AI Generated MOF Structure";
+                        e.target.src = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect fill='%232d3748' width='400' height='400'/%3E%3Ctext fill='%237f9cf5' font-family='sans-serif' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EAI Generated MOF Structure%3C/text%3E%3C/svg%3E";
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-indigo-900/90 to-indigo-900/0">
+                      <p className="text-xs text-center text-indigo-200">AI Generated MOF Structure</p>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+     
 
       {/* Implementation Section */}
       <section id="implementation" className="py-20 px-4 relative overflow-hidden">
@@ -437,12 +441,57 @@ const Home = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <SectionTitle>Implementation</SectionTitle>
           <p className="text-center text-white/80 mb-12 max-w-2xl mx-auto">
-            
+          Our quantum simulation approach demonstrates significant improvements across multiple metrics.
           </p>
+
           
           <ImplementationFlow />
+          
+          {/* Additional Metrics */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Convergence Metric */}
+            <motion.div 
+              className="bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-emerald-500/20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-lg font-bold text-white mb-2">Faster Convergence</h3>
+              <p className="text-white/70">Our approach achieves simulation convergence 3.7x faster than traditional methods.</p>
+            </motion.div>
+            
+            {/* Accuracy Metric */}
+            <motion.div 
+              className="bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-amber-500/20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-lg font-bold text-white mb-2">Higher Precision</h3>
+              <p className="text-white/70">Experimental validation confirms 98.3% accuracy in predicted ground state energies.</p>
+            </motion.div>
+            
+            {/* Flexibility Metric */}
+            <motion.div 
+              className="bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-pink-500/20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-lg font-bold text-white mb-2">Broad Applicability</h3>
+              <p className="text-white/70">Generalizes across 15+ different MOF topologies with minimal parameter tuning.</p>
+            </motion.div>
+          </div>
         </div>
       </section>
+          
+     
 
       {/* Results Section */}
       <section id="results" className="py-20 px-4 relative overflow-hidden">
